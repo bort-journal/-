@@ -1,14 +1,105 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>📘 Борт-Журнал</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🧭 Мой компас сознательного присутствия</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      background: #f4f2ee;
+      color: #2f2f2f;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .date {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    section {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2rem;
+      border-bottom: 1px solid #ccc;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background: #fff;
+      margin: 0.5rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.3);
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-  <h1>📘 Борт-Журнал — 29 июня 2025</h1>
-  <p>🕖 Утренний настрой: Спокойствие, фокус, творчество</p>
-  <label><input type="checkbox"> Стройка и мангал</label><br>
-  <label><input type="checkbox"> Разобраться с Copilot 😊</label><br>
-  <label><input type="checkbox"> Аранжировка 🎶</label>
+  <header>
+    <h1>🧭 Мой компас сознательного присутствия</h1>
+    <div class="date">📅 Сегодня: <span id="today"></span></div>
+  </header>
+
+  <section>
+    <h2>📌 Запланировано на день</h2>
+    <ul>
+      <li><span>🌿 Проверка теплицы и капельного полива</span><input type="checkbox" /></li>
+      <li><span>📖 Чтение главы из текущей книги</span><input type="checkbox" /></li>
+      <li><span>🛠 Организация инструментов в мастерской</span><input type="checkbox" /></li>
+    </ul>
+
+    <h2>🧠 Наблюдения / Осознания</h2>
+    <p>Здесь можно оставить важные размышления, почувствованные моменты или неожиданные повороты дня.</p>
+
+    <h2>🖼 Фото / Визуальные моменты</h2>
+    <p><em>Пока пусто. Вставим слайдер позже → <strong>Слайдер</strong> 😉</em></p>
+  </section>
+
+  <footer>
+    &copy; 2025 • Компас сознательного присутствия
+  </footer>
+
+  <script>
+    // Автоматически выводим сегодняшнюю дату
+    document.getElementById("today").textContent = new Date().toLocaleDateString("ru-RU", {
+      weekday: "long", year: "numeric", month: "long", day: "numeric"
+    });
+  </script>
 </body>
 </html>
