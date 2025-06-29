@@ -15,7 +15,7 @@
     .slider-track {
       display: flex;
       transition: transform 0.5s ease;
-      width: 300%;
+      width: 200%;
     }
     .slide {
       flex: 0 0 100%;
@@ -40,7 +40,6 @@
     }
     #s1:checked ~ .slider-track { transform: translateX(0); }
     #s2:checked ~ .slider-track { transform: translateX(-100%); }
-    #s3:checked ~ .slider-track { transform: translateX(-200%); }
   </style>
 </head>
 <body>
@@ -59,18 +58,15 @@
     <div class="slider-container">
       <input type="radio" name="slider" id="s1" checked hidden>
       <input type="radio" name="slider" id="s2" hidden>
-      <input type="radio" name="slider" id="s3" hidden>
 
       <div class="slider-track">
-        <div class="slide"><img src="https://i.imgur.com/p9ZMEzr.jpg" alt="Фото 1"></div>
-        <div class="slide"><img src="https://i.imgur.com/CUvqdfm.jpg" alt="Фото 2"></div>
-        <div class="slide"><img src="https://i.imgur.com/hnvWaf3.jpeg" alt="Фото 3"></div>
+        <div class="slide"><img src="images/al_1.jpg" alt="Фото 1"></div>
+        <div class="slide"><img src="images/al_2.jpg" alt="Фото 2"></div>
       </div>
 
       <div class="nav-dots dots">
         <label for="s1">●</label>
         <label for="s2">●</label>
-        <label for="s3">●</label>
       </div>
     </div>
 
@@ -78,12 +74,12 @@
     <section>
       <h2>🗓️ Вехи</h2>
       <ul>
-        <li>15 марта — первый рисунок</li>
-        <li>2 мая — берег весной</li>
+        <li>📷 Сцена 1 — свет и тень</li>
+        <li>📷 Сцена 2 — близко и спокойно</li>
       </ul>
 
       <h2>📝 Отражения</h2>
-      <p>Может быть записан дневник, цитата, наблюдение. Свет, жест, пауза — то, что хочется сохранить в контуре Аленького.</p>
+      <p>Ты можешь вписать сюда любой текст: воспоминание, образ, одну фразу или целый абзац — то, что хочется сохранить рядом с изображением.</p>
     </section>
 
     <a href="index.html" class="back-button">← На главную</a>
