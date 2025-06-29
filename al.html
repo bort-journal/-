@@ -5,9 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🌸 Аленький — Компас присутствия</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .slider-container {
+      position: relative;
+      max-width: 600px;
+      margin: 2em auto;
+      overflow: hidden;
+    }
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 300%;
+    }
+    .slide {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .nav-dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .nav-dots input[type="radio"] {
+      display: none;
+    }
+    .dots label {
+      cursor: pointer;
+      font-size: 2rem;
+      padding: 0 5px;
+    }
+    #s1:checked ~ .slider-track { transform: translateX(0); }
+    #s2:checked ~ .slider-track { transform: translateX(-100%); }
+    #s3:checked ~ .slider-track { transform: translateX(-200%); }
+  </style>
 </head>
 <body>
-  <!-- Горизонтальная лента (петля) -->
+  <!-- Горизонтальная петля -->
   <div class="top-nav">
     <a href="index.html">🌸 Аленький ←</a>
     <a href="mama.html">🌼 Мама</a>
@@ -15,27 +52,39 @@
     <a href="grom.html">🐶 Гром</a>
   </div>
 
-  <!-- Слайдер -->
-  <section class="slider">
-    <h1>🌸 Аленький</h1>
-    <div class="gallery">
-      <img src="https://i.imgur.com/p9ZMEzr.jpg" alt="Фото 1">
-      <img src="https://i.imgur.com/CUvqdfm.jpg" alt="Фото 2">
-      <img src="https://i.imgur.com/hnvWaf3.jpeg" alt="Фото 3">
-    </div>
-  </section>
-
-  <!-- Содержимое -->
   <main>
-    <h2>🗓️ Вехи и сцены</h2>
-    <ul>
-      <li>18 января — в шарфе, в дневном свете</li>
-      <li>2 февраля — взгляд вбок, момент у окна</li>
-      <li>14 апреля — светлый портрет</li>
-    </ul>
+    <h1>🌸 Аленький</h1>
 
-    <h2>📝 Слова рядом</h2>
-    <p>Тут могут быть цитаты, наблюдения, короткие фразы о настроении и внутренних сюжетах Аленького.</p>
+    <!-- Слайдер -->
+    <div class="slider-container">
+      <input type="radio" name="slider" id="s1" checked hidden>
+      <input type="radio" name="slider" id="s2" hidden>
+      <input type="radio" name="slider" id="s3" hidden>
+
+      <div class="slider-track">
+        <div class="slide"><img src="https://i.imgur.com/p9ZMEzr.jpg" alt="Фото 1"></div>
+        <div class="slide"><img src="https://i.imgur.com/CUvqdfm.jpg" alt="Фото 2"></div>
+        <div class="slide"><img src="https://i.imgur.com/hnvWaf3.jpeg" alt="Фото 3"></div>
+      </div>
+
+      <div class="nav-dots dots">
+        <label for="s1">●</label>
+        <label for="s2">●</label>
+        <label for="s3">●</label>
+      </div>
+    </div>
+
+    <!-- Сцены -->
+    <section>
+      <h2>🗓️ Вехи</h2>
+      <ul>
+        <li>15 марта — первый рисунок</li>
+        <li>2 мая — берег весной</li>
+      </ul>
+
+      <h2>📝 Отражения</h2>
+      <p>Может быть записан дневник, цитата, наблюдение. Свет, жест, пауза — то, что хочется сохранить в контуре Аленького.</p>
+    </section>
 
     <a href="index.html" class="back-button">← На главную</a>
   </main>
