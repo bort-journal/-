@@ -104,4 +104,60 @@
       <div class="glide mama-slide">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            <li class="glide__slide"><img src="/attachments/G1HkbxZXK1Q2jPqcuJnea.jpeg" alt="Мама
+            <li class="glide__slide"><img src="/attachments/G1HkbxZXK1Q2jPqcuJnea.jpeg" alt="Мама 1"></li>
+            <li class="glide__slide"><img src="/attachments/DLS2WvGc5N6BaB3Loaee1.jpeg" alt="Мама 2"></li>
+            <li class="glide__slide"><img src="/attachments/FriaNEBXxHmbhpzvj21DN.jpeg" alt="Мама 3"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-title">🌼 Мама</div>
+    </a>
+
+    <!-- Гром -->
+    <a href="grom.html" class="card">
+      <div class="glide grom-slide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide"><img src="/attachments/4X3JEqxSvzH6mtoTnsDpc.jpeg" alt="Гром 1"></li>
+            <li class="glide__slide"><img src="/attachments/3pXczLQh5fPxhs4M1z5G8.jpeg" alt="Гром 2"></li>
+            <li class="glide__slide"><img src="/attachments/koG2pFFR2BuBxbbmNbGtZ.jpeg" alt="Гром 3"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-title">🐾 Гром</div>
+    </a>
+
+    <!-- Календарь -->
+    <a href="calendar.html" class="card">
+      <div class="glide calendar-slide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide"><img src="https://i.imgur.com/4rrlEeM.jpg" alt="Песочные часы"></li>
+            <li class="glide__slide"><img src="https://i.imgur.com/eEG8GCM.jpg" alt="Календарик"></li>
+            <li class="glide__slide"><img src="https://i.imgur.com/qD1HTy5.jpg" alt="Компас времени"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-title">📅 Календарь</div>
+    </a>
+  </div>
+
+  <div class="content">
+    <h1>Компас присутствия</h1>
+    <p>Добро пожаловать. Слева — живые ветви памяти. Щёлкни по любой — и переместишься внутрь: там образы, даты, имена, маршруты, смыслы.</p>
+    <p>Это не просто сайт — это архив, дерево, навигация по сердцу. 🌿</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+  <script>
+    ['al', 'mama', 'grom', 'calendar'].forEach(key => {
+      new Glide(`.${key}-slide`, {
+        type: 'carousel',
+        autoplay: 3000,
+        animationDuration: 800
+      }).mount();
+    });
+  </script>
+
+</body>
+</html>
