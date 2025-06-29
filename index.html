@@ -2,162 +2,68 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Компас присутствия</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background: #f6fbe9;
-      display: flex;
-      min-height: 100vh;
-    }
-
-    /* Сайдбар с карточками */
-    .sidebar {
-      width: 220px;
-      background: #eef6de;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      border-right: 2px solid #dde6d2;
-      overflow-y: auto;
-    }
-
-    .card {
-      text-decoration: none;
-      color: inherit;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-      overflow: hidden;
-      transition: transform 0.2s;
-    }
-    .card:hover {
-      transform: scale(1.02);
-    }
-
-    .glide__slide img {
-      width: 100%;
-      height: 110px;
-      object-fit: cover;
-    }
-
-    .card-title {
-      text-align: center;
-      padding: 0.5rem;
-      font-weight: bold;
-      font-size: 1rem;
-      background: #f7faf2;
-    }
-
-    /* Основная зона */
-    .content {
-      flex: 1;
-      padding: 2rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #374a2d;
-      margin-top: 0;
-    }
-
-    @media screen and (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
-        border-right: none;
-        border-bottom: 2px solid #dde6d2;
-      }
-      .card {
-        min-width: 160px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <div class="sidebar">
-    <!-- Аленький -->
-    <a href="al.html" class="card">
-      <div class="glide al-slide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide"><img src="/attachments/zh1brSofvpQHqUzCTVstt.jpeg" alt="Аленький 1"></li>
-            <li class="glide__slide"><img src="/attachments/ULnYoi9fFQTqyD5h6vUqk.png" alt="Аленький 2"></li>
-          </ul>
-        </div>
-      </div>
-      <div class="card-title">🌸 Аленький</div>
-    </a>
+  <aside class="sidebar">
+    <h2>Живые ветви</h2>
 
     <!-- Мама -->
-    <a href="mama.html" class="card">
-      <div class="glide mama-slide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide"><img src="/attachments/G1HkbxZXK1Q2jPqcuJnea.jpeg" alt="Мама 1"></li>
-            <li class="glide__slide"><img src="/attachments/DLS2WvGc5N6BaB3Loaee1.jpeg" alt="Мама 2"></li>
-            <li class="glide__slide"><img src="/attachments/FriaNEBXxHmbhpzvj21DN.jpeg" alt="Мама 3"></li>
-          </ul>
-        </div>
-      </div>
-      <div class="card-title">🌼 Мама</div>
-    </a>
+    <div class="card">
+      <a href="mama.html">
+        <img src="URL_мама1" alt="Мама" />
+        <img src="URL_мама2" alt="Мама" />
+        <img src="URL_мама3" alt="Мама" />
+        <img src="URL_мама4" alt="Мама" />
+        <img src="URL_мама5" alt="Мама" />
+        <div>🌼 Мама</div>
+      </a>
+    </div>
+
+    <!-- Аленький -->
+    <div class="card">
+      <a href="al.html">
+        <img src="URL_al_1" alt="Аленький" />
+        <img src="URL_al_2" alt="Аленький" />
+        <img src="URL_al_3" alt="Аленький" />
+        <div>🌸 Аленький</div>
+      </a>
+    </div>
 
     <!-- Гром -->
-    <a href="grom.html" class="card">
-      <div class="glide grom-slide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide"><img src="/attachments/4X3JEqxSvzH6mtoTnsDpc.jpeg" alt="Гром 1"></li>
-            <li class="glide__slide"><img src="/attachments/3pXczLQh5fPxhs4M1z5G8.jpeg" alt="Гром 2"></li>
-            <li class="glide__slide"><img src="/attachments/koG2pFFR2BuBxbbmNbGtZ.jpeg" alt="Гром 3"></li>
-          </ul>
-        </div>
-      </div>
-      <div class="card-title">🐾 Гром</div>
-    </a>
+    <div class="card">
+      <a href="grom.html">
+        <img src="URL_grom_1" alt="Гром" />
+        <img src="URL_grom_2" alt="Гром" />
+        <img src="URL_grom_3" alt="Гром" />
+        <div>🐶 Гром</div>
+      </a>
+    </div>
+
+    <!-- Юля -->
+    <div class="card">
+      <a href="yulia.html">
+        <img src="URL_yulia_1" alt="Юля" />
+        <img src="URL_yulia_2" alt="Юля" />
+        <img src="URL_yulia_3" alt="Юля" />
+        <img src="URL_yulia_4" alt="Юля" />
+        <img src="URL_yulia_5" alt="Юля" />
+        <div>👧 Юля</div>
+      </a>
+    </div>
 
     <!-- Календарь -->
-    <a href="calendar.html" class="card">
-      <div class="glide calendar-slide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide"><img src="https://i.imgur.com/4rrlEeM.jpg" alt="Песочные часы"></li>
-            <li class="glide__slide"><img src="https://i.imgur.com/eEG8GCM.jpg" alt="Календарик"></li>
-            <li class="glide__slide"><img src="https://i.imgur.com/qD1HTy5.jpg" alt="Компас времени"></li>
-          </ul>
-        </div>
-      </div>
-      <div class="card-title">📅 Календарь</div>
-    </a>
-  </div>
+    <div class="card">
+      <a href="calendar.html">
+        <div>🗓 Календарь</div>
+      </a>
+    </div>
+  </aside>
 
-  <div class="content">
+  <main>
     <h1>Компас присутствия</h1>
-    <p>Добро пожаловать. Слева — живые ветви памяти. Щёлкни по любой — и переместишься внутрь: там образы, даты, имена, маршруты, смыслы.</p>
-    <p>Это не просто сайт — это архив, дерево, навигация по сердцу. 🌿</p>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
-  <script>
-    ['al', 'mama', 'grom', 'calendar'].forEach(key => {
-      new Glide(`.${key}-slide`, {
-        type: 'carousel',
-        autoplay: 3000,
-        animationDuration: 800
-      }).mount();
-    });
-  </script>
-
+    <p>Добро пожаловать. Слева — живые ветви памяти. Щёлкни по любой — и ты переместишься внутрь: там образы, даты, маршруты, лица и сцены, которые вместе создают систему, в которую можно вернуться.</p>
+  </main>
 </body>
 </html>
