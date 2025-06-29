@@ -2,137 +2,127 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
+  <title>🌼 Мама — Компас присутствия</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Мама • Компас присутствия</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
   <style>
     body {
-      font-family: Georgia, serif;
       margin: 0;
-      background: #fdf7f1;
-      color: #2c2c2c;
+      font-family: system-ui, sans-serif;
+      background: #fdfcf7;
+      color: #222;
+      display: flex;
+      min-height: 100vh;
     }
-    .hero {
-      position: relative;
-      height: 260px;
+
+    .left-slider {
+      width: 35%;
+      max-width: 320px;
+      background: #fffdfa;
       overflow: hidden;
+      position: relative;
     }
-    .hero .glide__slide img {
+
+    .left-slider img {
       width: 100%;
-      height: 260px;
+      height: 100vh;
       object-fit: cover;
-    }
-    .hero h1 {
+      opacity: 0;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      background: rgba(0,0,0,0.45);
-      padding: 0.5rem 1.2rem;
-      border-radius: 12px;
-      font-size: 2rem;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+      top: 0;
+      left: 0;
+      transition: opacity 1.2s ease-in-out;
     }
-    header .nav {
+
+    .left-slider img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 2em;
+    }
+
+    .top-nav {
+      margin-bottom: 2em;
       text-align: center;
-      margin: 1.5rem 0;
     }
-    .nav a {
+    .top-nav a {
+      margin: 0 1em;
       text-decoration: none;
-      background: #f0e6d9;
-      padding: 0.5rem 1rem;
-      color: #5b3e1d;
-      border-radius: 6px;
+      color: #a03b6b;
       font-weight: bold;
     }
-    section {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
+
+    h1 {
+      color: #a03b6b;
+      font-size: 1.8em;
     }
+
     h2 {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.3rem;
-      margin-top: 2rem;
+      margin-top: 2em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4em;
+      color: #a03b6b;
     }
+
     ul {
-      list-style: disc;
-      padding-left: 1.2rem;
+      padding-left: 1.2em;
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    .gallery img {
-      max-width: 240px;
-      width: 100%;
-      border-radius: 8px;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      margin: 3rem 0 1rem;
-    }
-    @media screen and (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.3rem;
-        padding: 0.4rem 0.8rem;
-      }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 2em;
+      text-decoration: none;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="glide">
-      <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides">
-          <li class="glide__slide"><img src="/attachments/G1HkbxZXK1Q2jPqcuJnea.jpeg" alt="Папа и мама с козлятами"></li>
-          <li class="glide__slide"><img src="/attachments/DLS2WvGc5N6BaB3Loaee1.jpeg" alt="Женская радость"></li>
-          <li class="glide__slide"><img src="/attachments/FriaNEBXxHmbhpzvj21DN.jpeg" alt="Мама с растением"></li>
-        </ul>
-      </div>
-    </div>
-    <h1>🌼 Мама</h1>
+
+  <div class="left-slider">
+    <img src="images/mama_1.jpg" alt="Фото 1" class="active">
+    <img src="images/mama_2.jpg" alt="Фото 2">
+    <img src="images/mama_3.jpg" alt="Фото 3">
   </div>
 
-  <header>
-    <div class="nav"><a href="index.html">← На главную</a></div>
-  </header>
-
-  <section>
-    <h2>📅 События и даты</h2>
-    <ul>
-      <li>3 февраля — День рождения</li>
-      <li>25 мая — День посадки жасмина</li>
-      <li>15 октября — Воспоминание о Бендерском балу</li>
-    </ul>
-
-    <h2>🧠 Мысли и наблюдения</h2>
-    <p>Здесь будет храниться голос её интонации, записи о здоровье, прозрения, воспоминания, добрые диалоги.</p>
-
-    <h2>🖼 Галерея</h2>
-    <div class="gallery">
-      <img src="/attachments/G1HkbxZXK1Q2jPqcuJnea.jpeg" alt="Семейный кадр">
-      <img src="/attachments/DLS2WvGc5N6BaB3Loaee1.jpeg" alt="Женская радость">
+  <div class="content">
+    <div class="top-nav">
+      <a href="index.html">🌸 Аленький ←</a>
+      <a href="mama.html">🌼 Мама</a>
+      <a href="yulia.html">👧 Юля</a>
+      <a href="grom.html">🐶 Гром</a>
     </div>
-  </section>
 
-  <footer>
-    &copy; 2025 • Ветвь «Мама» • Компас сознательного присутствия
-  </footer>
+    <main>
+      <h1>🌼 Мама</h1>
 
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+      <section>
+        <h2>🗓️ Вехи</h2>
+        <ul>
+          <li>Сцена 1 — взгляд вдаль</li>
+          <li>Сцена 2 — домашний свет</li>
+          <li>Сцена 3 — тишина за окнами</li>
+        </ul>
+
+        <h2>📝 Отражения</h2>
+        <p>Она стояла с той самой прямотой, которую дети не сразу понимают, но потом долго ищут глазами.  
+        Здесь — не образ, здесь — явление.</p>
+      </section>
+
+      <a href="index.html" class="back-button">← На главную</a>
+    </main>
+  </div>
+
   <script>
-    new Glide('.glide', {
-      type: 'carousel',
-      autoplay: 4500,
-      animationDuration: 900
-    }).mount();
+    const images = document.querySelectorAll('.left-slider img');
+    let index = 0;
+    setInterval(() => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 6000);
   </script>
+
 </body>
 </html>
