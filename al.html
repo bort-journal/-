@@ -2,29 +2,46 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Аленький • Компас присутствия</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
   <style>
     body {
       font-family: Georgia, serif;
-      background: #f9fff4;
-      color: #2f2f2f;
       margin: 0;
-      padding: 2rem;
+      background: #f4fff6;
+      color: #2f2f2f;
     }
 
-    header {
+    .hero {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .hero .glide__slide img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      background: rgba(0,0,0,0.4);
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      font-size: 2rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    }
+
+    header .nav {
       text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-    }
-
-    .nav {
-      margin-bottom: 1.5rem;
-      text-align: center;
+      margin: 1.5rem 0;
     }
 
     .nav a {
@@ -33,48 +50,70 @@
       padding: 0.5rem 1rem;
       color: #2a4b2a;
       border-radius: 6px;
+      font-weight: bold;
     }
 
     section {
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto;
+      padding: 1rem 2rem;
     }
 
     h2 {
-      font-size: 1.2rem;
       border-bottom: 1px solid #ccc;
+      padding-bottom: 0.3rem;
       margin-top: 2rem;
     }
 
     ul {
-      padding-left: 1rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      max-width: 280px;
-      margin: 0.5rem;
-      border-radius: 8px;
+      list-style: disc;
+      padding-left: 1.2rem;
     }
 
     .gallery {
       display: flex;
       flex-wrap: wrap;
+      gap: 1rem;
       justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      max-width: 240px;
+      width: 100%;
+      border-radius: 8px;
     }
 
     footer {
-      margin-top: 3rem;
       text-align: center;
       font-size: 0.9rem;
-      color: #888;
+      color: #777;
+      margin: 3rem 0 1rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.3rem;
+        padding: 0.4rem 0.8rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="hero">
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide"><img src="/attachments/zh1brSofvpQHqUzCTVstt.jpeg" alt="Фото 1"></li>
+          <li class="glide__slide"><img src="/attachments/ULnYoi9fFQTqyD5h6vUqk.png" alt="Фото 2"></li>
+        </ul>
+      </div>
+    </div>
     <h1>🌸 Аленький</h1>
-    <div class="nav"><a href="index.html">← На Главную</a></div>
+  </div>
+
+  <header>
+    <div class="nav"><a href="index.html">← На главную</a></div>
   </header>
 
   <section>
@@ -85,17 +124,26 @@
     </ul>
 
     <h2>🧠 Мысли и наблюдения</h2>
-    <p>Здесь будут записаны короткие истории, открытия, вопросы и отражения.</p>
+    <p>Здесь будут записаны короткие истории, открытия, отражения.</p>
 
     <h2>🖼 Галерея</h2>
     <div class="gallery">
-      <img src="https://i.imgur.com/p9ZMEzr.jpg" alt="Фото 1" />
-      <img src="https://i.imgur.com/CUvqdfm.jpg" alt="Фото 2" />
+      <img src="https://i.imgur.com/p9ZMEzr.jpg" alt="Фото 1">
+      <img src="https://i.imgur.com/CUvqdfm.jpg" alt="Фото 2">
     </div>
   </section>
 
   <footer>
     &copy; 2025 • Ветвь «Аленький» • Компас сознательного присутствия
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+  <script>
+    new Glide('.glide', {
+      type: 'carousel',
+      autoplay: 4000,
+      animationDuration: 800
+    }).mount();
+  </script>
 </body>
 </html>
