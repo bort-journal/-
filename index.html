@@ -1,146 +1,107 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🧭 Мой компас сознательного присутствия</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Компас присутствия</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Georgia", serif;
-      background: #efffed url('https://i.imgur.com/v2vDc9U.png') repeat; /* лёгкий листовой фон */
-      color: #2e2e2e;
-      line-height: 1.6;
-      padding: 2rem;
+      font-family: Georgia, serif;
+      background: #f6fbe9;
+      display: flex;
+      min-height: 100vh;
     }
 
-    header, footer {
+    /* Сайдбар с карточками */
+    .sidebar {
+      width: 220px;
+      background: #eef6de;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      border-right: 2px solid #dde6d2;
+      overflow-y: auto;
+    }
+
+    .card {
+      text-decoration: none;
+      color: inherit;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .glide__slide img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+    }
+
+    .card-title {
       text-align: center;
+      padding: 0.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      background: #f7faf2;
+    }
+
+    /* Основная зона */
+    .content {
+      flex: 1;
+      padding: 2rem;
     }
 
     h1 {
       font-size: 2rem;
-      margin-bottom: 0.3rem;
+      color: #374a2d;
+      margin-top: 0;
     }
 
-    .date {
-      font-size: 1rem;
-      color: #5a5a5a;
-      margin-bottom: 1rem;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin: 2rem 0;
-    }
-
-    nav a {
-      background: #fff;
-      border: 1px solid #a3caa1;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      color: #2b512b;
-      font-weight: bold;
-      transition: all 0.2s ease;
-    }
-
-    nav a:hover {
-      background: #d3edcf;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.7);
-      padding: 1rem 2rem;
-      border-radius: 12px;
-    }
-
-    h2 {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.3rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #f7fff4;
-      margin-bottom: 0.5rem;
-      padding: 0.7rem 1rem;
-      border-radius: 6px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-
-    input[type="checkbox"] {
-      transform: scale(1.2);
-    }
-
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-
-    .slider img {
-      width: 200px;
-      height: auto;
-      border-radius: 6px;
+    @media screen and (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 2px solid #dde6d2;
+      }
+      .card {
+        min-width: 160px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🧭 Мой компас сознательного присутствия</h1>
-    <div class="date">📅 Сегодня: <span id="today"></span></div>
-  </header>
 
-  <nav>
-    <a href="#">🖼 Галерея</a>
-    <a href="#">📅 Календарь</a>
-    <a href="#">🧪 Химия</a>
-    <a href="#">📋 Список дел</a>
-    <a href="#">📈 Отчёт</a>
-  </nav>
+  <div class="sidebar">
+    <!-- Аленький -->
+    <a href="al.html" class="card">
+      <div class="glide al-slide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide"><img src="/attachments/zh1brSofvpQHqUzCTVstt.jpeg" alt="Аленький 1"></li>
+            <li class="glide__slide"><img src="/attachments/ULnYoi9fFQTqyD5h6vUqk.png" alt="Аленький 2"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-title">🌸 Аленький</div>
+    </a>
 
-  <section>
-    <h2>☕ Утренние размышления</h2>
-    <p><em>«Пока вода греется, я просто сижу и слышу, как просыпается огород...»</em></p>
-
-    <h2>✅ Сегодня в приоритете</h2>
-    <ul>
-      <li><span>🌱 Контроль влаги в теплице</span><input type="checkbox"></li>
-      <li><span>📓 Конспектировать идею поленницы в стиле Японский минимализм</span><input type="checkbox"></li>
-      <li><span>🧹 Очистить секатор и смазать инструмент</span><input type="checkbox"></li>
-    </ul>
-
-    <h2>🖼 Моменты дня</h2>
-    <div class="slider">
-      <img src="https://i.imgur.com/8TkThqR.jpg" alt="пример 1">
-      <img src="https://i.imgur.com/YIkeI5h.jpg" alt="пример 2">
-      <img src="https://i.imgur.com/DbHLpXa.jpg" alt="пример 3">
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 • Создано с компасом 🧭 в руках и лейкой в другой 🌿
-  </footer>
-
-  <script>
-    // дата
-    document.getElementById("today").textContent = new Date().toLocaleDateString("ru-RU", {
-      day: "numeric", month: "long", year: "numeric", weekday: "long"
-    });
-  </script>
-</body>
-</html>
+    <!-- Мама -->
+    <a href="mama.html" class="card">
+      <div class="glide mama-slide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide"><img src="/attachments/G1HkbxZXK1Q2jPqcuJnea.jpeg" alt="Мама
