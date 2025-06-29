@@ -2,48 +2,118 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🌸 Аленький — Компас присутствия</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #fafafa;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav {
+      background: #fff0f5;
+      padding: 0.8em;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+    .top-nav a {
+      margin: 0 1.2em;
+      color: #a03b6b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 1.5em;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #a03b6b;
+      text-align: center;
+      font-size: 1.8em;
+    }
+
     .slider-container {
       position: relative;
-      max-width: 600px;
-      margin: 2em auto;
       overflow: hidden;
+      max-width: 100%;
+      margin: 2em auto;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     .slider-track {
       display: flex;
-      transition: transform 0.5s ease;
+      transition: transform 0.4s ease;
       width: 200%;
     }
+
     .slide {
       flex: 0 0 100%;
-      max-width: 100%;
     }
+
     .slide img {
       width: 100%;
       height: auto;
       display: block;
+      object-fit: contain;
+      max-height: 80vh;
     }
+
     .nav-dots {
       text-align: center;
       margin-top: 10px;
     }
-    .nav-dots input[type="radio"] {
+
+    .nav-dots input {
       display: none;
     }
-    .dots label {
+
+    .nav-dots label {
+      font-size: 1.8em;
+      padding: 0 6px;
+      color: #ccc;
       cursor: pointer;
-      font-size: 2rem;
-      padding: 0 5px;
     }
-    #s1:checked ~ .slider-track { transform: translateX(0); }
-    #s2:checked ~ .slider-track { transform: translateX(-100%); }
+
+    #s1:checked ~ .slider-track {
+      transform: translateX(0%);
+    }
+
+    #s2:checked ~ .slider-track {
+      transform: translateX(-100%);
+    }
+
+    #s1:checked ~ .nav-dots label[for="s1"],
+    #s2:checked ~ .nav-dots label[for="s2"] {
+      color: #a03b6b;
+    }
+
+    section {
+      margin-top: 2em;
+    }
+
+    h2 {
+      color: #a03b6b;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.2em;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 2em;
+      color: #555;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <!-- Горизонтальная петля -->
+
   <div class="top-nav">
     <a href="index.html">🌸 Аленький ←</a>
     <a href="mama.html">🌼 Мама</a>
@@ -54,7 +124,6 @@
   <main>
     <h1>🌸 Аленький</h1>
 
-    <!-- Слайдер -->
     <div class="slider-container">
       <input type="radio" name="slider" id="s1" checked hidden>
       <input type="radio" name="slider" id="s2" hidden>
@@ -64,25 +133,25 @@
         <div class="slide"><img src="images/al_2.jpg" alt="Фото 2"></div>
       </div>
 
-      <div class="nav-dots dots">
+      <div class="nav-dots">
         <label for="s1">●</label>
         <label for="s2">●</label>
       </div>
     </div>
 
-    <!-- Сцены -->
     <section>
       <h2>🗓️ Вехи</h2>
       <ul>
-        <li>📷 Сцена 1 — свет и тень</li>
-        <li>📷 Сцена 2 — близко и спокойно</li>
+        <li>Сцена 1 — свет и тень</li>
+        <li>Сцена 2 — близко и спокойно</li>
       </ul>
 
       <h2>📝 Отражения</h2>
-      <p>Ты можешь вписать сюда любой текст: воспоминание, образ, одну фразу или целый абзац — то, что хочется сохранить рядом с изображением.</p>
+      <p>Ты можешь вписать сюда любое воспоминание, слово, ощущение — то, что хочется оставить рядом с образом.</p>
     </section>
 
     <a href="index.html" class="back-button">← На главную</a>
   </main>
+
 </body>
 </html>
